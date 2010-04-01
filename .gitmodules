@@ -1,6 +1,6 @@
 [submodule "submodules/raphael.draggable"]
 	path = submodules/raphael.draggable
-	url = git@github.com:dodgeballcannon/raphael.draggable.git
+	url = git://github.com/dodgeballcannon/raphael.draggable.git
 [submodule "submodules/graphjs"]
 	path = submodules/graphjs
 	url = git://github.com/dodgeballcannon/graphjs.git
