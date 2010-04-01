@@ -1,0 +1,32 @@
+<html>
+
+  <head>
+    <title>raphael.planarity demo</title>  
+    <script src="graph.js" type="text/javascript" charset="utf-8"></script>
+    <script src="graph_extras.js" type="text/javascript" charset="utf-8"></script>
+    <script src="raphael.js" type="text/javascript" charset="utf-8"></script>
+    <script src="raphael.draggable.js" type="text/javascript" charset="utf-8"></script>
+    <script src="raphael.planarity.js" type="text/javascript" charset="utf-8"></script>
+  </head>
+  
+  <style type="text/css" media="screen">
+    body {
+      margin: 0;
+    }
+    
+    #demo {
+      width: 320px;
+      height: 480px;
+      margin: 0 auto;
+    }
+  </style>
+  
+  <body style=>
+    <div id="demo"></div>
+    
+    <script type="text/javascript">
+      Raphael(document.getElementById('demo')).planarity(5);
+    </script>
+  </body>
+
+</html>
