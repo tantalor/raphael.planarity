@@ -3,7 +3,7 @@
 	url = git@github.com:dodgeballcannon/raphael.draggable.git
 [submodule "submodules/graphjs"]
 	path = submodules/graphjs
-	url = git@github.com:dodgeballcannon/graphjs.git
+	url = git://github.com/dodgeballcannon/graphjs.git
 [submodule "submodules/raphael"]
 	path = submodules/raphael
 	url = git://github.com/DmitryBaranovskiy/raphael.git
