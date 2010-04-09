@@ -1,9 +1,9 @@
-[submodule "submodules/raphael.draggable"]
-	path = submodules/raphael.draggable
+[submodule "vendor/raphael.draggable"]
+	path = vendor/raphael.draggable
 	url = git://github.com/dodgeballcannon/raphael.draggable.git
-[submodule "submodules/graphjs"]
-	path = submodules/graphjs
+[submodule "vendor/graphjs"]
+	path = vendor/graphjs
 	url = git://github.com/dodgeballcannon/graphjs.git
-[submodule "submodules/raphael"]
-	path = submodules/raphael
+[submodule "vendor/raphael"]
+	path = vendor/raphael
 	url = git://github.com/DmitryBaranovskiy/raphael.git
