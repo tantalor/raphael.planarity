@@ -4,4 +4,4 @@
 
 To instantiate Planarity in a Raphaël object, call the `planarity(n)` method, where `n>=4` is the complexity of the desired graph.
 
-For more information, visit the [raphael.planarity demo](http://johntantalo.com/raphael.planarity/demo.html) or see the [planar graph algorithm](http://johntantalo.com/wiki/Planarity).
+For more information, visit the [raphael.planarity demo](http://johntantalo.com/raphael.planarity/demo/) or see the [planar graph algorithm](http://johntantalo.com/wiki/Planarity).
