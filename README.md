@@ -4,8 +4,8 @@
 
 To instantiate Planarity, call the `planarity(n)` method on a Raphaël object, where `n>=4` is the complexity of the desired graph.
 
-For example, within `<script>` tags,
+For example,
 
     Raphael(0, 0, 200, 200).planarity(5);
 
-Please see the [planar graph algorithm description](http://johntantalo.com/wiki/Planarity) for more information about how raphael.planarity generates its planar graphs.
+Please see the description of the [planar graph algorithm ](http://johntantalo.com/wiki/Planarity) for more information about how raphael.planarity generates its planar graphs.
