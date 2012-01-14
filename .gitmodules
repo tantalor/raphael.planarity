@@ -1,12 +1,12 @@
 [submodule "vendor/raphael.draggable"]
 	path = vendor/raphael.draggable
-	url = git://github.com/dodgeballcannon/raphael.draggable.git
+  url = git://github.com/tantalor/raphael.draggable.git
 [submodule "vendor/graphjs"]
 	path = vendor/graphjs
-	url = git://github.com/dodgeballcannon/graphjs.git
+	url = git://github.com/tantalor/graphjs.git
 [submodule "vendor/raphael"]
 	path = vendor/raphael
 	url = git://github.com/DmitryBaranovskiy/raphael.git
 [submodule "vendor/raphael.graph"]
 	path = vendor/raphael.graph
-	url = git://github.com/dodgeballcannon/raphael.graph.git
+	url = git://github.com/tantalor/raphael.graph.git
