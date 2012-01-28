@@ -42,15 +42,30 @@
     
     <script type="text/javascript">
       (function () {
-        var LEVEL_OFFSET = 5;
+        var LEVEL_OFFSET = 3;
         var START_LEVEL = 1;
         var demo = $('#demo');
+        var cleared = new Object();
         
         function openLevel () {
           var hash = this.hash;
           var level = hash && parseInt(hash.substr(1), 10) || START_LEVEL;
           demo.find('svg').remove()
-          Raphael(demo.get(0)).planarity(level+LEVEL_OFFSET);
+          var planarity = Raphael(demo.get(0)).planarity(level+LEVEL_OFFSET);
+          planarity.onLevelClear(function () {
+            cleared[level] = true;
+            $('.next').show();
+          });
+          if (cleared[level]) {
+            $('.next').show();
+          } else {
+            $('.next').hide();
+          }
+          if (level > 1) {
+            $('.prev').show();
+          } else {
+            $('.prev').hide();
+          }
           $('.level').text(level);
           // next tick...
           setTimeout(function () {
