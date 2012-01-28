@@ -38,33 +38,33 @@
   
   <body style=>
     <div id="demo"></div>
-    <p>Level: <a class="prev" href="#prev">&larr;</a><span class="level"></span><a class="next"  href="#next">&rarr;</a></p>
+    <p>Level: <a class="prev change-level" href="#">&larr;</a><span class="level"></span><a class="next change-level" href="#">&rarr;</a></p>
     
     <script type="text/javascript">
-      var START_LEVEL = 5;
-      
-      (function (level) {
+      (function () {
+        var LEVEL_OFFSET = 5;
+        var START_LEVEL = 1;
         var demo = $('#demo');
         
-        function openLevel() {
+        function openLevel () {
+          var hash = this.hash;
+          var level = hash && parseInt(hash.substr(1), 10) || START_LEVEL;
           demo.find('svg').remove()
-          Raphael(demo.get(0)).planarity(level);
-          $('.level').text(level-START_LEVEL+1);
+          Raphael(demo.get(0)).planarity(level+LEVEL_OFFSET);
+          $('.level').text(level);
+          // next tick...
+          setTimeout(function () {
+            $('.prev').attr('href', '#'+(level > 1 ? level-1 : START_LEVEL));
+            $('.next').attr('href', '#'+(level+1));
+          }, 0);
         };
         
-        openLevel();
+        // start with level in document.location.hash
+        openLevel.call(document.location);
         
-        $('.prev').click(function () {
-          if (level = START_LEVEL) return;
-          level--;
-          openLevel();
-        });
-        
-        $('.next').click(function () {
-          level++;
-          openLevel();
-        });
-      })(START_LEVEL);
+        // change level
+        $('.change-level').click(openLevel);
+      })();
     </script>
     
     <p>This is a demo of <a href="http://github.com/tantalor/raphael.planarity">raphael.planarity</a>.</p>
