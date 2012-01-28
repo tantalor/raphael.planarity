@@ -47,30 +47,45 @@
       <p style="text-align: center">Level: <a class="prev change-level" href="#">&larr;</a><span class="level"></span><a class="next change-level" href="#">&rarr;</a></p>
     
       <script type="text/javascript">
-        (function () {
-          var LEVEL_OFFSET = 5;
-          var START_LEVEL = 1;
-          var demo = $('#demo');
-
-          function openLevel () {
-            var hash = this.hash;
-            var level = hash && parseInt(hash.substr(1), 10) || START_LEVEL;
-            demo.find('svg').remove()
-            Raphael(demo.get(0)).planarity(level+LEVEL_OFFSET);
-            $('.level').text(level);
-            // next tick...
-            setTimeout(function () {
-              $('.prev').attr('href', '#'+(level > 1 ? level-1 : START_LEVEL));
-              $('.next').attr('href', '#'+(level+1));
-            }, 0);
-          };
-
-          // start with level in document.location.hash
-          openLevel.call(document.location);
-
-          // change level
-          $('.change-level').click(openLevel);
-        })();
+      (function () {
+        var LEVEL_OFFSET = 5;
+        var START_LEVEL = 1;
+        var demo = $('#demo');
+        var cleared = new Object();
+        
+        function openLevel () {
+          var hash = this.hash;
+          var level = hash && parseInt(hash.substr(1), 10) || START_LEVEL;
+          demo.find('svg').remove()
+          var planarity = Raphael(demo.get(0)).planarity(level+LEVEL_OFFSET);
+          planarity.onLevelClear(function () {
+            cleared[level] = true;
+            $('.next').show();
+          });
+          if (cleared[level]) {
+            $('.next').show();
+          } else {
+            $('.next').hide();
+          }
+          if (level > 1) {
+            $('.prev').show();
+          } else {
+            $('.prev').hide();
+          }
+          $('.level').text(level);
+          // next tick...
+          setTimeout(function () {
+            $('.prev').attr('href', '#'+(level > 1 ? level-1 : START_LEVEL));
+            $('.next').attr('href', '#'+(level+1));
+          }, 0);
+        };
+        
+        // start with level in document.location.hash
+        openLevel.call(document.location);
+        
+        // change level
+        $('.change-level').click(openLevel);
+      })();
       </script>
     </div>
   </body>
